@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AuthForm.css';
 import { url } from '../constant';
 import { useNavigate } from 'react-router-dom';
 import { MdEmail, MdLock } from 'react-icons/md';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { isTokenValid } from '../utils';
 
 function Login() {
   const [email, setEmail] = useState('');
@@ -12,6 +13,12 @@ function Login() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isTokenValid()) {
+      navigate('/home'); // ✅ Already logged in? Redirect to home
+    }
+  }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();

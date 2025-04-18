@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AuthForm.css';
 import { url } from '../constant';
 import { MdEmail, MdLock } from 'react-icons/md';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { useNavigate } from 'react-router';
+import { isTokenValid } from '../utils';
 
 function Signup({ onSignup }) {
   const [email, setEmail] = useState('');
@@ -11,6 +13,15 @@ function Signup({ onSignup }) {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [error, setError] = useState('');
+
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isTokenValid()) {
+      navigate('/home'); // ✅ Already logged in? Redirect to home
+    }
+  }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();
