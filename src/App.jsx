@@ -18,7 +18,7 @@ function App() {
     <Routes>
       {/* Agar token hai, toh Login aur Signup ko block kar denge */}
       <Route path="/" element={token ? <Navigate to="/home" /> : <Login />} />
-      <Route path="/signup" element={token ? <Navigate to="/home" /> : <Signup />} />
+      <Route path="/signup" element={ <Signup />} />
 
       {/* Protected Routes (Home, Dashboard, Create Task, etc.) */}
       <Route
