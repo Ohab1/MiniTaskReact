@@ -1,0 +1,61 @@
+.create-task-container {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .create-task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .input-field, .textarea-field, .select-field, .file-input {
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  .textarea-field {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .select-field {
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .select-field option {
+    background-color: #fff;
+  }
+  
+  .file-input {
+    padding: 8px;
+  }
+  
+  .submit-button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  
